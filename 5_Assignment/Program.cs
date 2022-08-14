@@ -5,7 +5,6 @@
 int RecursiveFibonacci(int first, int second, int count)
 {
     count--;
-    
     if(count == 0) {
         return second;
     }else{
@@ -13,6 +12,15 @@ int RecursiveFibonacci(int first, int second, int count)
     }
 }
 
-int lastFibo = RecursiveFibonacci(1,1,5);
-Console.WriteLine("Last fibo number was " + lastFibo);
-Console.ReadLine(); 
+
+while(true){
+    string gg = Console.ReadLine();
+    
+    if(gg.All(char.IsDigit)){
+        int gg2 = int.Parse(gg);
+        int lastFibo = RecursiveFibonacci(1,1,gg2);
+        Console.WriteLine("Last fibo number was " + lastFibo);
+    }else{
+        Console.WriteLine("The Given String is Not a Number");
+    }
+}   
